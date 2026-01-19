@@ -160,6 +160,7 @@ section h2 {
     padding: 30px;
     border-radius: 18px;
     margin-bottom: 30px;
+    height: min-content;
 }
 
 .project-img {
@@ -200,6 +201,25 @@ section h2 {
     text-decoration: none;
     font-weight: 600;
     color: #000;
+}
+/* ================= PROJECT DETAILS PAGE ================= */
+
+.project-details {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.project-details .project-card p {
+    color: #e0e0e0;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.project-details img,
+.project-details video {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
 }
 
 /* ================= CONTACT ================= */
