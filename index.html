@@ -34,7 +34,7 @@
 
         <div class="hero-buttons">
             <a href="#projects" class="btn">View Projects</a>
-            <a href="" class="btn" download>Download Resume</a>
+            <a href="certificates/BVNSMANOJ_RESUME.pdf" class="btn" download>Download Resume</a>
         </div>
     </div>
 </section>
@@ -70,17 +70,64 @@
         <span>Time Management</span>
     </div>
 </section>
+<!-- ================= CERTIFICATIONS ================= -->
+ 
+<section class="project-details">
+
+    <div class="project-card">
+        <h3>Certifications</h3>
+        <p style="text-align:center; opacity:0.85; margin-bottom:20px;">
+            Click on a certification to view the official certificate
+        </p>
+
+        <div class="skills-grid">
+            <span onclick="openPDF('certificates/BULUSUVENKATA NAGA SUR-CS_E DS_C CISCO-certificate.pdf')">
+                Programming Essentials in C – CLA(Cisco)
+            </span>
+            <span onclick="openPDF('certificates/mepro certificate.pdf')">
+                MePro – Pearson 
+            </span>
+            <span onclick="openPDF('certificates/edx certificate.pdf')">
+                Business writing techniques  – edX
+            </span>
+            <span onclick="openPDF('certificates/NPTEL-python for data science.pdf')">
+                Python for Data Science  – NPTEL
+            </span>
+            <span onclick="openPDF('certificates/ai.pdf')">
+                Essentials of GenAI  – DigiSaksham(Microsoft)
+            </span>
+            <span onclick="openPDF('certificates/python for datascience.pdf')">
+                Python for Data Science - Infosys Springboard
+            </span>
+            <span onclick="openPDF('certificates/_certificate_suryamanoj_Introduction to cybersecurity.pdf')">
+                Introduaction to cybersecurity - Infosys Springboard
+            </span>
+            <span onclick="openPDF('certificates/_certificate_suryamanoj_Introduction to cybersecurity.pdf')">
+                Python Essentials 1 - Infosys Springboard
+            </span>
+            <span onclick="openPDF('certificates/_certificate_suryamanoj_Introduction to cybersecurity.pdf')">
+                Python Essentials 2 - Infosys Springboard
+            </span>
+            <span onclick="openPDF('certificates/_certificate_suryamanoj_Introduction to cybersecurity.pdf')">
+                Data Analyst job simulation - Citi (Forage)
+            </span>
+
+        </div>
+    </div>
+
+</section>
 
 <!-- ================= PROJECTS ================= -->
 <section id="projects">
     <h2>Projects</h2>
 
-    <div class="project-card">
+    <div class="project-card"><span>
         <div class="project-img">
             <img src="smhp-files/smhpind.png" alt="Student Stress Prediction">
             <div class="overlay">
                 <a href="smhp.html" target="_blank">View Project</a>
             </div>
+        </span>
         </div>
         <h3>Student Stress Prediction System</h3>
         <p>
@@ -91,7 +138,7 @@
 
     <div class="project-card">
         <div class="project-img">
-            <img src="hyd-file/Hyderabad.jpg" alt="Hyderabad House Price Prediction">
+            <img src="hyd-file/hyd-indimg.jpg" alt="Hyderabad House Price Prediction">
             <div class="overlay">
                 <a href="hyd.html">View Project</a>
             </div>
@@ -102,17 +149,53 @@
             models and user inputs.
         </p>
     </div>
+    <div class="project-card">
+        <div class = "project-img">
+            <img src = "diab-files/diab-indimg.jpg" alt = "Diabetes Prediction System">
+            <div class = "overlay">
+                <a href = "diab.html">View Project</a>
+            </div>
+        </div>
+        <h3>Diabetes Prediction System</h3>
+        <p>Flask-based web application that predicts if a person has diabetes or not using regression analysis</p>
+    </div>
 </section>
 
 <!-- ================= CONTACT ================= -->
 <section id="contact">
     <h2>Contact</h2>
-    <p>Email: yourmail@example.com</p>
+
     <p>
-        <a href="#" target="_blank">LinkedIn</a> |
-        <a href="#" target="_blank">GitHub</a>
+        📧 Email:
+        <a href="mailto:suryamanoj1210@gmail.com">
+            suryamanoj1210@gmail.com
+        </a>
+    </p>
+
+    <p>
+        📧 Email:
+        <a href="mailto:bvnsuryamanojoff1210@gmail.com">
+            bvnsuryamanojoff1210@gmail.com
+        </a>
+    </p>
+    <p>
+        📞 Mobile:
+        <a href="tel:+917288026059">
+            +91 7288026059
+        </a>
+    </p>
+
+    <p>
+        <a href="https://www.linkedin.com/in/bulusu-venkata-naga-surya-manoj-8a36582bb/ ">
+            LinkedIn
+        </a>
+        |
+        <a href="https://github.com/bulususuryamanoj ">
+            GitHub
+        </a>
     </p>
 </section>
+
 
 <footer>
     <p>© 2026 Surya Manoj. All Rights Reserved.</p>
@@ -160,7 +243,28 @@ toggle.onclick = () => {
   document.body.classList.toggle("light-mode");
   toggle.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
 };
+
+function openPDF(pdfPath) {
+    document.getElementById("pdfFrame").src = pdfPath;
+    document.getElementById("pdfModal").style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+function closePDF() {
+    document.getElementById("pdfModal").style.display = "none";
+    document.getElementById("pdfFrame").src = "";
+    document.body.style.overflow = "auto";
+}
+
+
 </script>
+<!-- ================= PDF VIEWER MODAL ================= -->
+<div id="pdfModal" class="pdf-modal">
+    <div class="pdf-content">
+        <span class="close-btn" onclick="closePDF()">×</span>
+        <iframe id="pdfFrame"></iframe>
+    </div>
+</div>
 
 </body>
 </html>
