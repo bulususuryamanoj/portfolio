@@ -8,7 +8,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- COMMON CSS FOR ALL PAGES -->
+    <!-- Common CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -19,83 +19,133 @@
     <h1 class="logo">Surya Manoj</h1>
     <nav>
         <a href="index.html">Home</a>
-        <a href="index.html#projects">Projects</a>
+        <div class="nav-dropdown">
+    <a href="index.html#projects" class="nav-link">Projects</a>
+    <button class="dropdown-btn" type="button">▾</button>
+
+    <div class="dropdown-content">
+        <a href="smhp.html">Student Stress Prediction</a>
+        <a href="hyd.html">House Price Prediction</a>
+        <a href="diab.html">Diabetes Prediction</a>
+    </div>
+</div>
+
         <a href="index.html#contact">Contact</a>
+      <button class="btn secondary" onclick="goHome()">✕ Close</button>
     </nav>
 </header>
 
-<!-- ================= HERO ================= -->
-<section class="hero" style="height: 60vh;">
-    <div class="hero-text">
+<script>
+
+document.querySelectorAll(".dropdown-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        const parent = btn.parentElement;
+
+        // Close all other dropdowns
+        document.querySelectorAll(".nav-dropdown").forEach(dd => {
+            if (dd !== parent) {
+                dd.classList.remove("active");
+            }
+        });
+
+        // Toggle current dropdown
+        parent.classList.toggle("active");
+    });
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener("click", () => {
+    document.querySelectorAll(".nav-dropdown").forEach(dd => {
+        dd.classList.remove("active");
+    });
+});
+function goHome() {
+    if (window.history.length > 1) {
+        window.history.back();
+    } else {
+        window.location.href = "index.html#projects";
+    }
+}
+/* FORCE SCROLL TO TOP ON PAGE LOAD / REFRESH */
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    window.scrollTo(0, 0);
+});
+</script>
+
+
+<!-- ================= PROJECT HERO ================= -->
+<section class="project-hero">
+    <div class="project-hero-content">
         <h2>Student Mental Health Prediction System</h2>
         <p>Machine Learning | Python | Flask | Healthcare Analytics</p>
+
+        <a href="https://github.com/bulususuryamanoj/student_mental_health_system.git"
+           class="btn secondary"
+           target="_blank">
+            🔗 View GitHub Repository
+        </a>
     </div>
-    <section class="contact">
-        <div class="hero-text">
-        <a href ="https://github.com/bulususuryamanoj/student_mental_health_system.git">Github repo</a>
-        </div>
-    </section>
 </section>
 
-<!-- ================= PROJECT CONTENT ================= -->
-<section class="project-details" style="height:auto;">
+<!-- ================= PROJECT DETAILS ================= -->
+<section class="project-details">
 
     <!-- DESCRIPTION -->
     <div class="project-card">
-
         <h3>Project Description</h3>
+
         <p>
             This project focuses on identifying and predicting mental stress levels among students
-            using a <strong>data-driven and machine learning–based approach</strong>. The system is
-            designed to help in early detection of stress, anxiety, and academic pressure, enabling
-            timely support and awareness.
+            using a <strong>data-driven and machine learning–based approach</strong>. The system aims
+            to support early identification of stress, anxiety, and academic pressure to encourage
+            timely awareness and intervention.
         </p>
 
         <p>
-            The application is developed using <strong>Python and Flask</strong> for the backend,
-            where data preprocessing, feature handling, and machine learning model inference take
-            place. A trained classification model analyzes user-provided inputs such as academic
-            workload, sleep patterns, study habits, and lifestyle factors to predict stress levels.
+            The backend is developed using <strong>Python and Flask</strong>, where data preprocessing,
+            feature handling, and machine learning inference are implemented. The trained
+            classification model evaluates academic workload, sleep patterns, lifestyle habits, and
+            other factors to predict student stress levels.
         </p>
 
         <p>
-            The frontend is built using <strong>HTML, CSS, and JavaScript</strong> to provide a clean,
-            responsive, and user-friendly interface. The input page allows users to enter details
-            easily, while validation ensures meaningful and accurate data submission.
+            Extensive <strong>Exploratory Data Analysis (EDA)</strong> was performed to identify
+            correlations and significant indicators of stress. Data cleaning, encoding, and feature
+            scaling techniques were applied to improve prediction reliability.
         </p>
 
         <p>
-            During development, <strong>Exploratory Data Analysis (EDA)</strong> was performed to
-            identify patterns, correlations, and important stress indicators. Data preprocessing
-            techniques such as cleaning, encoding, and feature scaling were applied to improve model
-            performance and reliability.
+            The frontend is built using <strong>HTML, CSS, and JavaScript</strong>, providing a clean,
+            responsive, and user-friendly interface. Results are displayed in a simple and
+            understandable format, making the application accessible to non-technical users.
         </p>
 
         <p>
-            The result page displays predicted stress levels in a clear and understandable format,
-            making the system accessible even to non-technical users. This project demonstrates the
-            practical application of <strong>machine learning in healthcare and education domains</strong>.
-        </p>
-
-        <p>
-            Overall, this project showcases an end-to-end implementation of
-            <strong>machine learning, data analysis, Flask web development, and frontend design</strong>,
-            highlighting real-world problem-solving skills.
+            This project demonstrates an end-to-end application of
+            <strong>machine learning, data analysis, Flask development, and UI design</strong>
+            in a real-world healthcare and education use case.
         </p>
     </div>
 
-    <!-- INPUT PAGE -->
-    <div class="project-card">
-        <h3>Initial Input Page</h3>
-        <p>The user enters academic and lifestyle-related details required for stress prediction.</p>
-        <img src="smhp-files/smhpind.png" alt="Input Page Screenshot">
-    </div>
+    <!-- IMAGES GRID -->
+    <div class="media-grid">
 
-    <!-- RESULT PAGE -->
-    <div class="project-card">
-        <h3>Prediction Result Page</h3>
-        <p>The trained model predicts the stress level and displays the output clearly.</p>
-        <img src="smhp-files/smhp-res.png" alt="Result Page Screenshot">
+        <div class="project-card">
+            <h3>Initial Input Page</h3>
+            <img src="smhp-files/smhpind.png" alt="Input Page Screenshot">
+        </div>
+
+        <div class="project-card">
+            <h3>Prediction Result Page</h3>
+            <img src="smhp-files/smhp-res.png" alt="Result Page Screenshot">
+        </div>
+
     </div>
 
     <!-- VIDEO DEMO -->

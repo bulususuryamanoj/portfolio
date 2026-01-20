@@ -8,7 +8,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- COMMON CSS FOR ALL PAGES -->
+    <!-- Common CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -19,87 +19,124 @@
     <h1 class="logo">Surya Manoj</h1>
     <nav>
         <a href="index.html">Home</a>
-        <a href="index.html#projects">Projects</a>
+
+        <div class="nav-dropdown">
+            <a href="index.html#projects" class="nav-link">Projects</a>
+            <button class="dropdown-btn" type="button">▾</button>
+            <div class="dropdown-content">
+                <a href="smhp.html">Student Stress Prediction</a>
+                <a href="hyd.html">House Price Prediction</a>
+                <a href="diab.html">Diabetes Prediction</a>
+            </div>
+        </div>
+
         <a href="index.html#contact">Contact</a>
+        <button class="btn secondary" onclick="goHome()">✕ Close</button>
     </nav>
 </header>
 
-<!-- ================= HERO ================= -->
-<section class="hero" style="height: 60vh;">
-    <div class="hero-text">
+<script>
+/* Dropdown toggle */
+document.querySelectorAll(".dropdown-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const parent = btn.parentElement;
+
+        document.querySelectorAll(".nav-dropdown").forEach(dd => {
+            if (dd !== parent) dd.classList.remove("active");
+        });
+
+        parent.classList.toggle("active");
+    });
+});
+
+document.addEventListener("click", () => {
+    document.querySelectorAll(".nav-dropdown").forEach(dd => {
+        dd.classList.remove("active");
+    });
+});
+
+function goHome() {
+    window.location.href = "index.html#projects";
+}
+/* FORCE SCROLL TO TOP ON PAGE LOAD / REFRESH */
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    window.scrollTo(0, 0);
+});
+</script>
+
+<!-- ================= PROJECT HERO ================= -->
+<section class="project-hero">
+    <div class="project-hero-content">
         <h2>Diabetes Prediction System</h2>
         <p>Machine Learning | Python | Flask | Healthcare Analytics</p>
+
+        <a href="https://github.com/bulususuryamanoj/Diabetes_prediciton_system.git"
+           class="btn secondary"
+           target="_blank">
+            🔗 View GitHub Repository
+        </a>
     </div>
 </section>
 
-<!-- ================= PROJECT CONTENT ================= -->
-<section class="project-details" style="height:auto;">
+<!-- ================= PROJECT DETAILS ================= -->
+<section class="project-details">
 
     <!-- DESCRIPTION -->
     <div class="project-card">
         <h3>Project Description</h3>
 
         <p>
-            The Diabetes Prediction System is a machine learning–based web application designed to
-            predict the likelihood of diabetes in individuals based on key medical and lifestyle
-            parameters. The system aims to support early diagnosis and promote preventive healthcare
-            through data-driven insights.
+            The Diabetes Prediction System is a machine learning–based web application designed
+            to predict whether an individual is likely to have diabetes based on key medical
+            and lifestyle parameters. The project focuses on supporting
+            <strong>early diagnosis and preventive healthcare</strong>.
         </p>
 
         <p>
             The backend of the application is developed using <strong>Python and Flask</strong>,
-            where data preprocessing, feature engineering, and machine learning model inference
-            are performed. A classification-based machine learning model analyzes inputs such as
-            glucose level, blood pressure, BMI, age, insulin level, and other health indicators
-            to predict diabetes risk.
+            where data preprocessing, feature handling, and model inference are performed.
+            A trained classification model evaluates parameters such as glucose level,
+            blood pressure, BMI, insulin level, age, and other medical indicators.
         </p>
 
         <p>
-            During model development, detailed <strong>Exploratory Data Analysis (EDA)</strong> was
+            During development, detailed <strong>Exploratory Data Analysis (EDA)</strong> was
             conducted to understand feature distributions, correlations, and important predictors
             of diabetes. Data cleaning, handling missing values, encoding, and feature scaling
-            techniques were applied to improve model accuracy and robustness.
+            techniques were applied to enhance model accuracy.
         </p>
 
         <p>
-            The frontend is built using <strong>HTML, CSS, and JavaScript</strong> to provide a
-            responsive and user-friendly interface. Users can easily enter their medical details
-            through a structured input form, with validation ensuring accurate and reliable data
-            submission.
+            The frontend is built using <strong>HTML, CSS, and JavaScript</strong>, providing
+            a clean, responsive, and user-friendly interface. Users can enter medical details
+            easily through a structured input form with proper validation.
         </p>
 
         <p>
-            After processing the inputs, the system displays the predicted diabetes status clearly
-            on the result page, making the output understandable even for non-technical users.
-            This project demonstrates the practical application of
-            <strong>machine learning in healthcare diagnosis</strong>.
-        </p>
-
-        <p>
-            Overall, this project showcases an end-to-end implementation of
-            <strong>data analysis, machine learning, Flask web development, and frontend design</strong>,
-            highlighting real-world healthcare problem-solving skills.
+            The predicted result is displayed clearly on the result page, making the output
+            understandable even for non-technical users. This project demonstrates the
+            practical application of <strong>machine learning in healthcare analytics</strong>.
         </p>
     </div>
 
-    <!-- INPUT PAGE -->
-    <div class="project-card">
-        <h3>Medical Data Input Page</h3>
-        <p>
-            Users enter health-related details such as glucose level, blood pressure,
-            BMI, insulin level, age, and other medical parameters required for diabetes prediction.
-        </p>
-        <img src="diab-files/diab-indimg.jpg" alt="Diabetes Input Page">
-    </div>
+    <!-- IMAGES GRID -->
+    <div class="media-grid">
 
-    <!-- RESULT PAGE -->
-    <div class="project-card">
-        <h3>Prediction Result Page</h3>
-        <p>
-            The trained classification model predicts whether the user is likely to have diabetes
-            based on the provided medical data and displays the result clearly.
-        </p>
-        <img src="diab-files/diuab-resimg.jpg" alt="Diabetes Result Page">
+        <div class="project-card">
+            <h3>Medical Data Input Page</h3>
+            <img src="diab-files/diab-indimg.jpg" alt="Diabetes Input Page">
+        </div>
+
+        <div class="project-card">
+            <h3>Prediction Result Page</h3>
+            <img src="diab-files/diab-resimg.jpg" alt="Diabetes Result Page">
+        </div>
+
     </div>
 
     <!-- VIDEO DEMO -->

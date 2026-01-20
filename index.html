@@ -7,6 +7,7 @@
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
         <!-- CSS -->
         <link rel="stylesheet" href="style.css">
@@ -21,7 +22,7 @@
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
 
-    <div class="nav-dropdown">
+   <div class="nav-dropdown">
     <a href="#projects" class="nav-link">Projects</a>
     <button class="dropdown-btn" type="button">▾</button>
 
@@ -31,6 +32,7 @@
         <a href="diab.html">Diabetes Prediction</a>
     </div>
 </div>
+
 
     <div class="nav-dropdown">
         <button class="dropdown-btn" type="button">More ▾</button>
@@ -52,31 +54,57 @@
 
     <!-- ================= HERO ================= -->
     <section id="home" class="hero">
+    <div class="hero-content">
         <div class="hero-text">
             <h2>Hello, I'm <span>BULUSU VENKATA NAGA SURYA MANOJ</span></h2>
-             <div class="hero-image">
-        <img src="!BVNSMANOJ.jpg" alt="Surya Manoj">
-        </div>
             <p><span id="typing"></span></p>
 
             <div class="hero-buttons">
                 <a href="#projects" class="btn">View Projects</a>
-                <a href="certificates/BVNSMANOJ_RESUME.pdf" class="btn" download>Download Resume</a>
+                <a href="certificates/BVNSMANOJ_RESUME.pdf" class="btn" download>
+                    Download Resume
+                </a>
             </div>
-             <!-- PROFILE IMAGE -->
-   
+
+            <div class="hero-contact">
+                📧 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=suryamanoj1210@gmail.com">suryamanoj1210@gmail.com</a> |
+                📞 <a href="tel:+917288026059">+91 7288026059</a>
+                <div class="social-links">
+        <a href="https://www.linkedin.com/in/bulusu-venkata-naga-surya-manoj-8a36582bb/"
+           target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="https://github.com/bulususuryamanoj"
+           target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+            </div>
         </div>
-    </section>
+
+        <div class="hero-image">
+            <img src="BVNSMANOJ.png" alt="Surya Manoj">
+        </div>
+    </div>
+</section>
 
     <!-- ================= ABOUT ================= -->
     <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a passionate Data Science student with hands-on experience in Python,
-            machine learning, data analysis, and visualization tools. I enjoy solving
-            real-world problems using data-driven approaches.
-        </p>
-    </section>
+    <h2>About Me</h2>
+    <p>
+        I am a motivated Data Science student with strong hands-on experience in
+        Python, machine learning, and data analytics. I have built multiple
+        end-to-end projects involving data preprocessing, exploratory data
+        analysis, model building, and deployment using Flask.
+    </p>
+    <p>
+        I am particularly interested in applying data-driven solutions to
+        real-world problems in healthcare, business analytics, and automation.
+        I enjoy learning new technologies, participating in hackathons, and
+        continuously improving my analytical and problem-solving skills.
+    </p>
+</section>
 
     <!-- ================= SKILLS ================= -->
     <section id="skills">
@@ -103,12 +131,12 @@
     <!-- ================= PROJECTS ================= -->
     <section id="projects">
         <h2>Projects</h2>
-
+        <div class="projects-grid">
         <div class="project-card"><span>
             <div class="project-img">
                 <img src="smhp-files/smhpind.png" alt="Student Stress Prediction">
                 <div class="overlay">
-                    <a href="smhp.html" target="_blank">View Project</a>
+                    <a href="smhp.html" onclick = "saveScroll()" target="_blank">View Project</a>
                 </div>
             </span>
             </div>
@@ -123,7 +151,7 @@
             <div class="project-img">
                 <img src="hyd-file/hyd-indimg.jpg" alt="Hyderabad House Price Prediction">
                 <div class="overlay">
-                    <a href="hyd.html">View Project</a>
+                    <a href="hyd.html" onclick = "saveScroll()">View Project</a>
                 </div>
             </div>
             <h3>Hyderabad House Price Prediction</h3>
@@ -136,12 +164,13 @@
             <div class = "project-img">
                 <img src = "diab-files/diab-indimg.jpg" alt = "Diabetes Prediction System">
                 <div class = "overlay">
-                    <a href = "diab.html">View Project</a>
+                    <a href = "diab.html" onclick = "saveScroll()">View Project</a>
                 </div>
             </div>
             <h3>Diabetes Prediction System</h3>
             <p>Flask-based web application that predicts if a person has diabetes or not using regression analysis</p>
         </div>
+    </div>
     </section>
     <!-- ================= CERTIFICATIONS ================= -->
     
@@ -267,22 +296,22 @@
     <section class="project-details" id  ="hackathons">
         <div class="project-card">
             <h2>Hackathons</h2>
-
+            <h3>Click on them to know more details!</h3>
             <ul class="redirect-list">
                 <li>
-                    <a href="hackathon.html?type=android">
+                    <a href="hackathon.html?type=android" onclick="saveScroll()">
                         Android Hackathon
                     </a>
                 </li>
 
                 <li>
-                    <a href="hackathon.html?type=devops">
+                    <a href="hackathon.html?type=devops" onclick="saveScroll()">
                         DevOps Hackathon
                     </a>
                 </li>
 
                 <li>
-                    <a href="hackathon.html?type=eda">
+                    <a href="hackathon.html?type=eda" onclick="saveScroll()">
                         EDA Hackathon – <strong style="color:#00f2fe;">First Prize 🏆</strong>
                     </a>
                 </li>
@@ -406,7 +435,24 @@ function closePDF() {
         document.body.style.overflow = "auto";
     }
 }
+/* FORCE SCROLL TO TOP ON PAGE LOAD / REFRESH */
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
 
+document.addEventListener('DOMContentLoaded', function () {
+    window.scrollTo(0, 0);
+});
+function saveScroll() {
+    sessionStorage.setItem("scrollPos", window.scrollY);
+}
+document.addEventListener("DOMContentLoaded", () => {
+    const scrollPos = sessionStorage.getItem("scrollPos");
+
+    if (scrollPos !== null) {
+        window.scrollTo(0, parseInt(scrollPos));
+        sessionStorage.removeItem("scrollPos");
+    }
 /* ================= CLICK DROPDOWN (FINAL & CLEAN) ================= */
 
 document.querySelectorAll(".dropdown-btn").forEach(btn => {
@@ -433,11 +479,8 @@ document.addEventListener("click", () => {
         dd.classList.remove("active");
     });
 });
+
 </script>
-
-
-
-    </script>
     <!-- ================= PDF VIEWER MODAL ================= -->
     <div id="pdfModal" class="pdf-modal">
         <div class="pdf-content">

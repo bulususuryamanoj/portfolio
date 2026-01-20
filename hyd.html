@@ -8,7 +8,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- COMMON CSS FOR ALL PAGES -->
+    <!-- Common CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -19,21 +19,64 @@
     <h1 class="logo">Surya Manoj</h1>
     <nav>
         <a href="index.html">Home</a>
-        <a href="index.html#projects">Projects</a>
+
+        <div class="nav-dropdown">
+            <a href="index.html#projects" class="nav-link">Projects</a>
+            <button class="dropdown-btn" type="button">▾</button>
+            <div class="dropdown-content">
+                <a href="smhp.html">Student Stress Prediction</a>
+                <a href="hyd.html">House Price Prediction</a>
+                <a href="diab.html">Diabetes Prediction</a>
+            </div>
+        </div>
+
         <a href="index.html#contact">Contact</a>
+        <button class="btn secondary" onclick="goHome()">✕ Close</button>
     </nav>
 </header>
 
-<!-- ================= HERO ================= -->
-<section class="hero" style="height: 60vh;">
-    <div class="hero-text">
+<script>
+/* Dropdown toggle */
+document.querySelectorAll(".dropdown-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const parent = btn.parentElement;
+
+        document.querySelectorAll(".nav-dropdown").forEach(dd => {
+            if (dd !== parent) dd.classList.remove("active");
+        });
+
+        parent.classList.toggle("active");
+    });
+});
+
+document.addEventListener("click", () => {
+    document.querySelectorAll(".nav-dropdown").forEach(dd => {
+        dd.classList.remove("active");
+    });
+});
+
+function goHome() {
+    window.location.href = "index.html#projects";
+}
+</script>
+
+<!-- ================= PROJECT HERO ================= -->
+<section class="project-hero">
+    <div class="project-hero-content">
         <h2>Hyderabad House Price Prediction System</h2>
         <p>Machine Learning | Python | Flask | Real Estate Analytics</p>
+
+        <a href="https://github.com/bulususuryamanoj/hyderabad_house_price_prediction.git"
+           class="btn secondary"
+           target="_blank">
+            🔗 View GitHub Repository
+        </a>
     </div>
 </section>
 
-<!-- ================= PROJECT CONTENT ================= -->
-<section class="project-details" style="height:auto;">
+<!-- ================= PROJECT DETAILS ================= -->
+<section class="project-details">
 
     <!-- DESCRIPTION -->
     <div class="project-card">
@@ -41,63 +84,50 @@
 
         <p>
             The Hyderabad House Price Prediction System is a machine learning–based web application
-            designed to estimate residential property prices in Hyderabad based on multiple input
-            features. The project aims to assist users, buyers, and real estate professionals in
-            making informed decisions using data-driven insights.
+            designed to estimate residential property prices across different locations in Hyderabad.
+            The project helps users make informed real estate decisions using
+            <strong>data-driven price estimation</strong>.
         </p>
 
         <p>
-            The backend of the application is developed using <strong>Python and Flask</strong>,
-            where data preprocessing, feature engineering, and model inference are performed.
-            A regression-based machine learning model predicts house prices based on user inputs
-            such as location, area, number of bedrooms, bathrooms, and other relevant factors.
+            The backend is developed using <strong>Python and Flask</strong>, where data preprocessing,
+            feature engineering, and regression model inference are handled. The model predicts house
+            prices based on inputs such as location, built-up area, number of bedrooms, bathrooms,
+            and other property-related features.
         </p>
 
         <p>
-            During model development, extensive <strong>Exploratory Data Analysis (EDA)</strong>
-            was carried out to understand price trends, location-based variations, and feature
-            importance. Data cleaning, handling missing values, encoding categorical variables,
-            and feature scaling were applied to improve prediction accuracy.
+            Extensive <strong>Exploratory Data Analysis (EDA)</strong> was conducted to understand
+            location-wise price trends, feature correlations, and outliers. Techniques such as
+            missing value handling, encoding categorical variables, and feature scaling were applied
+            to improve model performance.
         </p>
 
         <p>
-            The frontend is built using <strong>HTML, CSS, and JavaScript</strong> to provide a
-            responsive and user-friendly interface. Users can easily enter property details
-            through the input form, which is validated before being sent to the Flask backend.
+            The frontend is built using <strong>HTML, CSS, and JavaScript</strong>, providing a clean,
+            responsive interface where users can easily input property details and view predictions.
         </p>
 
         <p>
-            After processing the inputs, the predicted house price is displayed clearly on the
-            result page, making the system accessible even to non-technical users. This project
-            demonstrates the practical application of <strong>machine learning in real estate
-            price estimation</strong>.
-        </p>
-
-        <p>
-            Overall, this project showcases an end-to-end implementation of
-            <strong>data analysis, machine learning, Flask web development, and frontend design</strong>,
-            highlighting real-world problem-solving and predictive modeling skills.
+            This project demonstrates a complete pipeline involving
+            <strong>data analysis, machine learning, Flask web development, and UI design</strong>,
+            applied to a real-world real estate use case.
         </p>
     </div>
 
-    <!-- INPUT PAGE -->
-    <div class="project-card">
-        <h3>House Details Input Page</h3>
-        <p>
-            Users enter property details such as location, area, house type
-            and other features required for house price prediction.
-        </p>
-        <img src="hyd-file/hyd-indimg.jpg" alt="House Price Input Page">
-    </div>
+    <!-- IMAGES GRID -->
+    <div class="media-grid">
 
-    <!-- RESULT PAGE -->
-    <div class="project-card">
-        <h3>Price Prediction Result Page</h3>
-        <p>
-            The trained regression model predicts the estimated house price based on the provided
-            inputs and displays the result clearly.
-        </p>
-        <img src="hyd-file/hyd-resimg.jpg" alt="House Price Result Page">
+        <div class="project-card">
+            <h3>House Details Input Page</h3>
+            <img src="hyd-file/hyd-indimg.jpg" alt="House Price Input Page">
+        </div>
+
+        <div class="project-card">
+            <h3>Price Prediction Result Page</h3>
+            <img src="hyd-file/hyd-resimg.jpg" alt="House Price Result Page">
+        </div>
+
     </div>
 
     <!-- VIDEO DEMO -->
