@@ -1,270 +1,450 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Surya Manoj | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Surya Manoj | Portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+        <!-- CSS -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
 
-<!-- ================= NAVBAR ================= -->
-<header>
-    <h1 class="logo">Surya Manoj</h1>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <button id="theme-toggle">🌙</button>
-    </nav>
-</header>
+    <!-- ================= NAVBAR ================= -->
+    <header>
+        <h1 class="logo">Surya Manoj</h1>
+        <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
 
-<!-- ================= HERO ================= -->
-<section id="home" class="hero">
-    <div class="hero-text">
-        <h2>Hello, I'm <span>BULUSU VENKATA NAGA SURYA MANOJ</span></h2>
-        <p><span id="typing"></span></p>
+    <div class="nav-dropdown">
+    <a href="#projects" class="nav-link">Projects</a>
+    <button class="dropdown-btn" type="button">▾</button>
 
-        <div class="hero-buttons">
-            <a href="#projects" class="btn">View Projects</a>
-            <a href="certificates/BVNSMANOJ_RESUME.pdf" class="btn" download>Download Resume</a>
+    <div class="dropdown-content">
+        <a href="smhp.html">Student Stress Prediction</a>
+        <a href="hyd.html">House Price Prediction</a>
+        <a href="diab.html">Diabetes Prediction</a>
+    </div>
+</div>
+
+    <div class="nav-dropdown">
+        <button class="dropdown-btn" type="button">More ▾</button>
+        <div class="dropdown-content">
+            <a href="#certifications">Certifications</a>
+            <a href="#bootcamps">Bootcamps</a>
+            <a href="#hackathons">Hackathons</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#hobbies">Hobbies</a>
         </div>
     </div>
-</section>
 
-<!-- ================= ABOUT ================= -->
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        I am a passionate Data Science student with hands-on experience in Python,
-        machine learning, data analysis, and visualization tools. I enjoy solving
-        real-world problems using data-driven approaches.
-    </p>
-</section>
+    <a href="#contact">Contact</a>
+    <button id="theme-toggle">🌙</button>
+</nav>
 
-<!-- ================= SKILLS ================= -->
-<section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="skills-grid">
-        <span>Python</span>
-        <span>SQL</span>
-        <span>Machine Learning</span>
-        <span>Power BI</span>
-        <span>Tableau</span>
-        <span>Excel</span>
-        <span>Git & GitHub</span>
-        <span>Microsoft Office</span>
-    </div>
 
-    <h2>Soft Skills</h2>
-    <div class="skills-grid">
-        <span>Communication</span>
-        <span>Leadership</span>
-        <span>Time Management</span>
-    </div>
-</section>
-<!-- ================= CERTIFICATIONS ================= -->
- 
-<section class="project-details">
+    </header>
 
-    <div class="project-card">
-        <h3>Certifications</h3>
-        <p style="text-align:center; opacity:0.85; margin-bottom:20px;">
-            Click on a certification to view the official certificate
+    <!-- ================= HERO ================= -->
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h2>Hello, I'm <span>BULUSU VENKATA NAGA SURYA MANOJ</span></h2>
+             <div class="hero-image">
+        <img src="!BVNSMANOJ.jpg" alt="Surya Manoj">
+        </div>
+            <p><span id="typing"></span></p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn">View Projects</a>
+                <a href="certificates/BVNSMANOJ_RESUME.pdf" class="btn" download>Download Resume</a>
+            </div>
+             <!-- PROFILE IMAGE -->
+   
+        </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a passionate Data Science student with hands-on experience in Python,
+            machine learning, data analysis, and visualization tools. I enjoy solving
+            real-world problems using data-driven approaches.
         </p>
+    </section>
 
+    <!-- ================= SKILLS ================= -->
+    <section id="skills">
+        <h2>Technical Skills</h2>
         <div class="skills-grid">
-            <span onclick="openPDF('certificates/BULUSUVENKATA NAGA SUR-CS_E DS_C CISCO-certificate.pdf')">
-                Programming Essentials in C – CLA(Cisco)
-            </span>
-            <span onclick="openPDF('certificates/mepro certificate.pdf')">
-                MePro – Pearson 
-            </span>
-            <span onclick="openPDF('certificates/edx certificate.pdf')">
-                Business writing techniques  – edX
-            </span>
-            <span onclick="openPDF('certificates/NPTEL-python for data science.pdf')">
-                Python for Data Science  – NPTEL
-            </span>
-            <span onclick="openPDF('certificates/ai.pdf')">
-                Essentials of GenAI  – DigiSaksham(Microsoft)
-            </span>
-            <span onclick="openPDF('certificates/python for datascience.pdf')">
-                Python for Data Science - Infosys Springboard
-            </span>
-            <span onclick="openPDF('certificates/_certificate_suryamanoj_Introduction to cybersecurity.pdf')">
-                Introduaction to cybersecurity - Infosys Springboard
-            </span>
-            <span onclick="openPDF('certificates/_certificate_suryamanoj_Introduction to cybersecurity.pdf')">
-                Python Essentials 1 - Infosys Springboard
-            </span>
-            <span onclick="openPDF('certificates/_certificate_suryamanoj_Introduction to cybersecurity.pdf')">
-                Python Essentials 2 - Infosys Springboard
-            </span>
-            <span onclick="openPDF('certificates/_certificate_suryamanoj_Introduction to cybersecurity.pdf')">
-                Data Analyst job simulation - Citi (Forage)
-            </span>
-
+            <span>Python</span>
+            <span>SQL</span>
+            <span>Machine Learning</span>
+            <span>Power BI</span>
+            <span>Tableau</span>
+            <span>Excel</span>
+            <span>Git & GitHub</span>
+            <span>Microsoft Office</span>
         </div>
-    </div>
 
-</section>
+        <h2>Soft Skills</h2>
+        <div class="skills-grid">
+            <span>Communication</span>
+            <span>Leadership</span>
+            <span>Time Management</span>
+        </div>
+    </section>
+    
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects">
+        <h2>Projects</h2>
 
-<!-- ================= PROJECTS ================= -->
-<section id="projects">
-    <h2>Projects</h2>
-
-    <div class="project-card"><span>
-        <div class="project-img">
-            <img src="smhp-files/smhpind.png" alt="Student Stress Prediction">
-            <div class="overlay">
-                <a href="smhp.html" target="_blank">View Project</a>
+        <div class="project-card"><span>
+            <div class="project-img">
+                <img src="smhp-files/smhpind.png" alt="Student Stress Prediction">
+                <div class="overlay">
+                    <a href="smhp.html" target="_blank">View Project</a>
+                </div>
+            </span>
             </div>
-        </span>
+            <h3>Student Stress Prediction System</h3>
+            <p>
+                Machine learning system to predict student stress levels using Python,
+                EDA, and classification algorithms.
+            </p>
         </div>
-        <h3>Student Stress Prediction System</h3>
+
+        <div class="project-card">
+            <div class="project-img">
+                <img src="hyd-file/hyd-indimg.jpg" alt="Hyderabad House Price Prediction">
+                <div class="overlay">
+                    <a href="hyd.html">View Project</a>
+                </div>
+            </div>
+            <h3>Hyderabad House Price Prediction</h3>
+            <p>
+                Flask-based web application that predicts house prices using regression
+                models and user inputs.
+            </p>
+        </div>
+        <div class="project-card">
+            <div class = "project-img">
+                <img src = "diab-files/diab-indimg.jpg" alt = "Diabetes Prediction System">
+                <div class = "overlay">
+                    <a href = "diab.html">View Project</a>
+                </div>
+            </div>
+            <h3>Diabetes Prediction System</h3>
+            <p>Flask-based web application that predicts if a person has diabetes or not using regression analysis</p>
+        </div>
+    </section>
+    <!-- ================= CERTIFICATIONS ================= -->
+    
+    <section class="project-details" id = "certifications">
+
+        <div class="project-card">
+            <h2>Certifications</h2>
+            <p style="text-align:center; opacity:0.85; margin-bottom:20px;">
+                Click on a certification to view the official certificate
+            </p>
+
+            <div class="skills-grid">
+                <span onclick="openPDF('certificates/BULUSUVENKATA NAGA SUR-CS_E DS_C CISCO-certificate.pdf')">
+                    Programming Essentials in C – CLA(Cisco)
+                </span>
+                <span onclick="openPDF('certificates/mepro certificate.pdf')">
+                    MePro – Pearson 
+                </span>
+                <span onclick="openPDF('certificates/edx certificate.pdf')">
+                    Business writing techniques  – edX
+                </span>
+                <span onclick="openPDF('certificates/NPTEL-python for data science.pdf')">
+                    Python for Data Science  – NPTEL
+                </span>
+                <span onclick="openPDF('certificates/ai.pdf')">
+                    Essentials of GenAI  – DigiSaksham(Microsoft)
+                </span>
+                <span onclick="openPDF('certificates/python for datascience.pdf')">
+                    Python for Data Science - Infosys Springboard
+                </span>
+                <span onclick="openPDF('certificates/_certificate_suryamanoj_Introduction to cybersecurity.pdf')">
+                    Introduaction to cybersecurity - Infosys Springboard
+                </span>
+                <span onclick="openPDF('certificates/_certificate_suryamanoj_Python-Essentials-1.pdf')">
+                    Python Essentials 1 - Infosys Springboard
+                </span>
+                <span onclick="openPDF('certificates/_certificate_suryamanoj_Python-Essentials-2.pdf')">
+                    Python Essentials 2 - Infosys Springboard
+                </span>
+                <span onclick="openPDF('certificates/CITI.pdf')">
+                    Data Analyst job simulation - Citi (Forage)
+                </span>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ================= BOOTCAMPS ================= -->
+    <section class="project-details" id = "bootcamps">
+        <h2>Bootcamps and hackathons</h2>
+
+        <!-- PYTHON BOOTCAMP -->
+        <div class="project-card">
+            <h3>Python Bootcamp</h3>
+
+            <p>
+                Completed an intensive Python Bootcamp focused on building a strong foundation in
+                programming, problem-solving, and real-world application development. The bootcamp
+                emphasized hands-on learning through practical exercises and mini-projects.
+            </p>
+
+            <p><strong>Key Topics Covered:</strong></p>
+            <ul style="padding-left:20px; line-height:1.8;">
+                <li>Python fundamentals (variables, data types, loops, functions)</li>
+                <li>Object-Oriented Programming (OOP)</li>
+                <li>File handling and exception handling</li>
+                <li>Working with libraries such as NumPy and Pandas</li>
+                <li>Basic data analysis and scripting</li>
+            </ul>
+
+            <p><strong>Tools & Technologies:</strong> Python, VS Code, Jupyter Notebook</p>
+
+            <p><strong>Outcome:</strong>  
+                Gained strong programming fundamentals and confidence to build Python-based
+                applications and data-driven projects.
+            </p>
+
+            <!-- Certificate -->
+            <div class="skills-grid">
+                <span onclick="openPDF('bootcamp and hackathons/py-bootcamp.pdf')">
+                    <br><strong>View Certificate</strong>
+                </span>
+            </div>
+        </div>
+
+        <!-- DATA SCIENCE BOOTCAMP -->
+        <div class="project-card">
+            <h3>Data Science with python Bootcamp</h3>
+
+            <p>
+                Completed a comprehensive Data Science Bootcamp focused on extracting insights from
+                data and building predictive models. The bootcamp combined theory with hands-on
+                implementation using real-world datasets.
+            </p>
+
+            <p><strong>Key Topics Covered:</strong></p>
+            <ul style="padding-left:20px; line-height:1.8;">
+                <li>Exploratory Data Analysis (EDA)</li>
+                <li>Data cleaning and preprocessing</li>
+                <li>Feature engineering and selection</li>
+                <li>Supervised and unsupervised machine learning algorithms</li>
+                <li>Model evaluation and optimization</li>
+            </ul>
+
+            <p><strong>Tools & Technologies:</strong> Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn</p>
+
+            <p><strong>Outcome:</strong>  
+                Built end-to-end data science projects and gained the ability to analyze data,
+                train machine learning models, and interpret results effectively.
+            </p>
+
+            <!-- Certificate -->
+            <div class="skills-grid">
+                <span onclick="openPDF('bootcamp and hackathons/dswp-bootcamp.pdf')">
+                    <br><strong>View Certificate</strong>
+                </span>
+            </div>
+        </div>
+
+    </section>
+    <!-- ================= HACKATHONS ================= -->
+    <section class="project-details" id  ="hackathons">
+        <div class="project-card">
+            <h2>Hackathons</h2>
+
+            <ul class="redirect-list">
+                <li>
+                    <a href="hackathon.html?type=android">
+                        Android Hackathon
+                    </a>
+                </li>
+
+                <li>
+                    <a href="hackathon.html?type=devops">
+                        DevOps Hackathon
+                    </a>
+                </li>
+
+                <li>
+                    <a href="hackathon.html?type=eda">
+                        EDA Hackathon – <strong style="color:#00f2fe;">First Prize 🏆</strong>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact">
+        <h2>Contact</h2>
+
         <p>
-            Machine learning system to predict student stress levels using Python,
-            EDA, and classification algorithms.
+            📧 Email:
+            <a href="mailto:suryamanoj1210@gmail.com">
+                suryamanoj1210@gmail.com
+            </a>
         </p>
-    </div>
 
-    <div class="project-card">
-        <div class="project-img">
-            <img src="hyd-file/hyd-indimg.jpg" alt="Hyderabad House Price Prediction">
-            <div class="overlay">
-                <a href="hyd.html">View Project</a>
-            </div>
-        </div>
-        <h3>Hyderabad House Price Prediction</h3>
         <p>
-            Flask-based web application that predicts house prices using regression
-            models and user inputs.
+            📧 Email:
+            <a href="mailto:bvnsuryamanojoff1210@gmail.com">
+                bvnsuryamanojoff1210@gmail.com
+            </a>
         </p>
-    </div>
-    <div class="project-card">
-        <div class = "project-img">
-            <img src = "diab-files/diab-indimg.jpg" alt = "Diabetes Prediction System">
-            <div class = "overlay">
-                <a href = "diab.html">View Project</a>
-            </div>
-        </div>
-        <h3>Diabetes Prediction System</h3>
-        <p>Flask-based web application that predicts if a person has diabetes or not using regression analysis</p>
-    </div>
-</section>
+        <p>
+            📞 Mobile:
+            <a href="tel:+917288026059">
+                +91 7288026059
+            </a>
+        </p>
 
-<!-- ================= CONTACT ================= -->
-<section id="contact">
-    <h2>Contact</h2>
-
-    <p>
-        📧 Email:
-        <a href="mailto:suryamanoj1210@gmail.com">
-            suryamanoj1210@gmail.com
-        </a>
-    </p>
-
-    <p>
-        📧 Email:
-        <a href="mailto:bvnsuryamanojoff1210@gmail.com">
-            bvnsuryamanojoff1210@gmail.com
-        </a>
-    </p>
-    <p>
-        📞 Mobile:
-        <a href="tel:+917288026059">
-            +91 7288026059
-        </a>
-    </p>
-
-    <p>
-        <a href="https://www.linkedin.com/in/bulusu-venkata-naga-surya-manoj-8a36582bb/ ">
-            LinkedIn
-        </a>
-        |
-        <a href="https://github.com/bulususuryamanoj ">
-            GitHub
-        </a>
-    </p>
-</section>
+        <p>
+            <a href="https://www.linkedin.com/in/bulusu-venkata-naga-surya-manoj-8a36582bb/ ">
+                LinkedIn
+            </a>
+            |
+            <a href="https://github.com/bulususuryamanoj ">
+                GitHub
+            </a>
+        </p>
+    </section>
 
 
-<footer>
-    <p>© 2026 Surya Manoj. All Rights Reserved.</p>
-</footer>
+    <footer>
+        <p>© 2026 Surya Manoj. All Rights Reserved.</p>
+    </footer>
 
-<!-- ================= SCRIPTS ================= -->
-<script>
-/* Typing Animation */
+    <!-- ================= SCRIPTS ================= -->
+   <script>
+/* ================= TYPING ANIMATION ================= */
+
 const textArray = [
-  "Data Science Student",
-  "Python Developer",
-  "Machine Learning Enthusiast",
-  "Power BI Analyst"
+    "Data Science Student",
+    "Python Developer",
+    "Machine Learning Enthusiast",
+    "Power BI Analyst"
 ];
 
-let index = 0;
+let textIndex = 0;
 let charIndex = 0;
 const typingElement = document.getElementById("typing");
 
 function typeEffect() {
-  if (charIndex < textArray[index].length) {
-    typingElement.textContent += textArray[index].charAt(charIndex);
-    charIndex++;
-    setTimeout(typeEffect, 100);
-  } else {
-    setTimeout(eraseEffect, 2000);
-  }
+    if (!typingElement) return;
+
+    if (charIndex < textArray[textIndex].length) {
+        typingElement.textContent += textArray[textIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeEffect, 100);
+    } else {
+        setTimeout(eraseEffect, 2000);
+    }
 }
 
 function eraseEffect() {
-  if (charIndex > 0) {
-    typingElement.textContent = textArray[index].substring(0, charIndex - 1);
-    charIndex--;
-    setTimeout(eraseEffect, 60);
-  } else {
-    index = (index + 1) % textArray.length;
-    setTimeout(typeEffect, 500);
-  }
+    if (charIndex > 0) {
+        typingElement.textContent =
+            textArray[textIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseEffect, 60);
+    } else {
+        textIndex = (textIndex + 1) % textArray.length;
+        setTimeout(typeEffect, 500);
+    }
 }
+
 typeEffect();
 
-/* Dark / Light Mode */
+/* ================= DARK / LIGHT MODE ================= */
+
 const toggle = document.getElementById("theme-toggle");
-toggle.onclick = () => {
-  document.body.classList.toggle("light-mode");
-  toggle.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
-};
+
+if (toggle) {
+    toggle.addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
+        toggle.textContent =
+            document.body.classList.contains("light-mode") ? "☀️" : "🌙";
+    });
+}
+
+/* ================= PDF MODAL ================= */
 
 function openPDF(pdfPath) {
-    document.getElementById("pdfFrame").src = pdfPath;
-    document.getElementById("pdfModal").style.display = "flex";
-    document.body.style.overflow = "hidden";
+    const modal = document.getElementById("pdfModal");
+    const frame = document.getElementById("pdfFrame");
+
+    if (modal && frame) {
+        frame.src = pdfPath;
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+    }
 }
 
 function closePDF() {
-    document.getElementById("pdfModal").style.display = "none";
-    document.getElementById("pdfFrame").src = "";
-    document.body.style.overflow = "auto";
+    const modal = document.getElementById("pdfModal");
+    const frame = document.getElementById("pdfFrame");
+
+    if (modal && frame) {
+        modal.style.display = "none";
+        frame.src = "";
+        document.body.style.overflow = "auto";
+    }
 }
 
+/* ================= CLICK DROPDOWN (FINAL & CLEAN) ================= */
 
+document.querySelectorAll(".dropdown-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        const parent = btn.parentElement;
+
+        // Close all other dropdowns
+        document.querySelectorAll(".nav-dropdown").forEach(dd => {
+            if (dd !== parent) {
+                dd.classList.remove("active");
+            }
+        });
+
+        // Toggle current dropdown
+        parent.classList.toggle("active");
+    });
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener("click", () => {
+    document.querySelectorAll(".nav-dropdown").forEach(dd => {
+        dd.classList.remove("active");
+    });
+});
 </script>
-<!-- ================= PDF VIEWER MODAL ================= -->
-<div id="pdfModal" class="pdf-modal">
-    <div class="pdf-content">
-        <span class="close-btn" onclick="closePDF()">×</span>
-        <iframe id="pdfFrame"></iframe>
-    </div>
-</div>
 
-</body>
-</html>
+
+
+    </script>
+    <!-- ================= PDF VIEWER MODAL ================= -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="pdf-content">
+            <span class="close-btn" onclick="closePDF()">×</span>
+            <iframe id="pdfFrame"></iframe>
+        </div>
+    </div>
+
+    </body>
+    </html>

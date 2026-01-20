@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hackathon Details | Surya Manoj</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <h1 class="logo">Surya Manoj</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <button class="btn secondary" onclick="goBack()">✕ Close</button>
+    </nav>
+</header>
+
+<!-- CONTENT -->
+<section class="project-details">
+    <div class="project-card">
+
+        <h3 id="title"></h3>
+
+        <!-- IMAGES -->
+        <div id="image-container"></div>
+
+        <p id="desc1"></p>
+        <p id="desc2"></p>
+
+        <h4 style="margin-top:20px;">Certificate</h4>
+        <img id="certificate" class="cert-img" alt="Certificate">
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Surya Manoj | Data Science Portfolio</p>
+</footer>
+
+<script>
+const hackathons = {
+    android: {
+        title: "Android Hackathon",
+        images: [
+            "bootcamp and hackathons/Android-app-development.jpg",
+            
+        ],
+        desc1: "Participated in an Android Hackathon focused on designing and developing mobile applications for real-world use cases.",
+        desc2: "Worked on UI planning, feature implementation, and presenting a functional prototype within limited time.",
+        certificate: "bootcamp and hackathons/android-hackcthon.jpg"
+    },
+
+    devops: {
+        title: "DevOps Hackathon",
+        images: [
+            "bootcamp and hackathons/devops.jpg", 
+            "bootcamp and hackathons/devopscertimg.jpg"
+        ],
+        desc1: "Participated in a DevOps Hackathon emphasizing CI/CD pipelines, automation, and deployment strategies.",
+        desc2: "Collaborated in a team to understand infrastructure workflows and improve system reliability.",
+        certificate: "bootcamp and hackathons/devopscert.jpg"
+    },
+
+    eda: {
+        title: "EDA Hackathon – First Prize 🏆",
+        images: [
+            "bootcamp and hackathons/eda.jpg",
+           "bootcamp and hackathons/prize.jpg"
+           
+        ],
+        desc1: "Won First Prize by performing in-depth Exploratory Data Analysis on a real-world dataset.",
+        desc2: "Applied data cleaning, visualization, and statistical techniques to derive actionable insights.",
+        certificate: "bootcamp and hackathons/EDA-CERTIFICATE.jpg"
+    }
+};
+
+// Get URL parameter
+const type = new URLSearchParams(window.location.search).get("type");
+const data = hackathons[type] || hackathons.android;
+
+// Inject content
+document.getElementById("title").innerText = data.title;
+document.getElementById("desc1").innerText = data.desc1;
+document.getElementById("desc2").innerText = data.desc2;
+document.getElementById("certificate").src = data.certificate;
+
+// Render images dynamically
+const container = document.getElementById("image-container");
+data.images.forEach(src => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.className = "hack-img";
+    container.appendChild(img);
+});
+
+function goBack() {
+    window.history.back();
+}
+</script>
+
+</body>
+</html>
