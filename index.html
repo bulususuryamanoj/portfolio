@@ -378,8 +378,7 @@ function typeEffect() {
     if (!typingElement) return;
 
     if (charIndex < textArray[textIndex].length) {
-        typingElement.textContent += textArray[textIndex].charAt(charIndex);
-        charIndex++;
+        typingElement.textContent += textArray[textIndex][charIndex++];
         setTimeout(typeEffect, 100);
     } else {
         setTimeout(eraseEffect, 2000);
@@ -389,8 +388,7 @@ function typeEffect() {
 function eraseEffect() {
     if (charIndex > 0) {
         typingElement.textContent =
-            textArray[textIndex].substring(0, charIndex - 1);
-        charIndex--;
+            textArray[textIndex].substring(0, --charIndex);
         setTimeout(eraseEffect, 60);
     } else {
         textIndex = (textIndex + 1) % textArray.length;
@@ -400,16 +398,15 @@ function eraseEffect() {
 
 typeEffect();
 
-/* ================= DARK / LIGHT MODE ================= */
+/* ================= THEME TOGGLE ================= */
 
 const toggle = document.getElementById("theme-toggle");
-
 if (toggle) {
-    toggle.addEventListener("click", () => {
+    toggle.onclick = () => {
         document.body.classList.toggle("light-mode");
         toggle.textContent =
             document.body.classList.contains("light-mode") ? "☀️" : "🌙";
-    });
+    };
 }
 
 /* ================= PDF MODAL ================= */
@@ -418,69 +415,52 @@ function openPDF(pdfPath) {
     const modal = document.getElementById("pdfModal");
     const frame = document.getElementById("pdfFrame");
 
-    if (modal && frame) {
-        frame.src = pdfPath;
-        modal.style.display = "flex";
-        document.body.style.overflow = "hidden";
-    }
+    frame.src = pdfPath;
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
 }
 
 function closePDF() {
-    const modal = document.getElementById("pdfModal");
-    const frame = document.getElementById("pdfFrame");
-
-    if (modal && frame) {
-        modal.style.display = "none";
-        frame.src = "";
-        document.body.style.overflow = "auto";
-    }
-}
-/* FORCE SCROLL TO TOP ON PAGE LOAD / REFRESH */
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
+    document.getElementById("pdfModal").style.display = "none";
+    document.getElementById("pdfFrame").src = "";
+    document.body.style.overflow = "auto";
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    window.scrollTo(0, 0);
-});
-function saveScroll() {
-    sessionStorage.setItem("scrollPos", window.scrollY);
-}
-document.addEventListener("DOMContentLoaded", () => {
-    const scrollPos = sessionStorage.getItem("scrollPos");
-
-    if (scrollPos !== null) {
-        window.scrollTo(0, parseInt(scrollPos));
-        sessionStorage.removeItem("scrollPos");
-    }
-/* ================= CLICK DROPDOWN (FINAL & CLEAN) ================= */
+/* ================= DROPDOWN MENU (CLICK ONLY) ================= */
 
 document.querySelectorAll(".dropdown-btn").forEach(btn => {
-    btn.addEventListener("click", (e) => {
+    btn.addEventListener("click", e => {
         e.stopPropagation();
+        const parent = btn.closest(".nav-dropdown");
 
-        const parent = btn.parentElement;
-
-        // Close all other dropdowns
         document.querySelectorAll(".nav-dropdown").forEach(dd => {
-            if (dd !== parent) {
-                dd.classList.remove("active");
-            }
+            if (dd !== parent) dd.classList.remove("active");
         });
 
-        // Toggle current dropdown
         parent.classList.toggle("active");
     });
 });
 
-// Close dropdowns when clicking outside
 document.addEventListener("click", () => {
-    document.querySelectorAll(".nav-dropdown").forEach(dd => {
-        dd.classList.remove("active");
-    });
+    document.querySelectorAll(".nav-dropdown")
+        .forEach(dd => dd.classList.remove("active"));
 });
 
+/* ================= SCROLL MEMORY ================= */
+
+function saveScroll() {
+    sessionStorage.setItem("scrollPos", window.scrollY);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const pos = sessionStorage.getItem("scrollPos");
+    if (pos) {
+        window.scrollTo(0, parseInt(pos));
+        sessionStorage.removeItem("scrollPos");
+    }
+});
 </script>
+
     <!-- ================= PDF VIEWER MODAL ================= -->
     <div id="pdfModal" class="pdf-modal">
         <div class="pdf-content">
