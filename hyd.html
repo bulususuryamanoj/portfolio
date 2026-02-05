@@ -67,6 +67,17 @@ if ('scrollRestoration' in history) {
 document.addEventListener('DOMContentLoaded', function () {
     window.scrollTo(0, 0);
 });
+
+function openImageModal(img) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+}
+
+function closeImageModal() {
+    document.getElementById("imageModal").style.display = "none";
+}
 </script>
 
 <!-- ================= PROJECT HERO ================= -->
@@ -128,12 +139,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         <div class="project-card">
             <h3>House Details Input Page</h3>
-            <img src="hyd-file/hyd-indimg.jpg" alt="House Price Input Page">
+            <img src="hyd-file/hyd-indimg.jpg" alt="House Price Input Page" onclick="openImageModal(this)" style="cursor: zoom-in;">
         </div>
 
         <div class="project-card">
             <h3>Price Prediction Result Page</h3>
-            <img src="hyd-file/hyd-resimg.jpg" alt="House Price Result Page">
+            <img src="hyd-file/hyd-resimg.jpg" alt="House Price Result Page" onclick="openImageModal(this)" style="cursor: zoom-in;">
         </div>
 
     </div>
@@ -145,7 +156,10 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
 </section>
-
+<!-- Fullscreen Image Modal -->
+<div id="imageModal" class="image-modal" onclick="closeImageModal()">
+    <img id="modalImage">
+</div>
 <!-- ================= FOOTER ================= -->
 <footer>
     <p>© 2026 Surya Manoj | Data Science Portfolio</p>

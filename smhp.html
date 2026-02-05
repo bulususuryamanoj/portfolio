@@ -76,6 +76,19 @@ if ('scrollRestoration' in history) {
 document.addEventListener('DOMContentLoaded', function () {
     window.scrollTo(0, 0);
 });
+
+function openImageModal(img) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+}
+
+function closeImageModal() {
+    document.getElementById("imageModal").style.display = "none";
+}
+
+
 </script>
 
 
@@ -138,12 +151,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         <div class="project-card">
             <h3>Initial Input Page</h3>
-            <img src="smhp-files/smhpind.png" alt="Input Page Screenshot">
+            <img src="smhp-files/smhpind.png" alt="Input Page Screenshot"onclick="openImageModal(this)" style="cursor: zoom-in;">
         </div>
 
         <div class="project-card">
             <h3>Prediction Result Page</h3>
-            <img src="smhp-files/smhp-res.png" alt="Result Page Screenshot">
+            <img src="smhp-files/smhp-res.png" alt="Result Page Screenshot"onclick="openImageModal(this)" style="cursor: zoom-in;">
         </div>
 
     </div>
@@ -155,6 +168,10 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
 </section>
+<!-- Fullscreen Image Modal -->
+<div id="imageModal" class="image-modal" onclick="closeImageModal()">
+    <img id="modalImage">
+</div>
 
 <!-- ================= FOOTER ================= -->
 <footer>

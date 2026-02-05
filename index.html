@@ -216,6 +216,17 @@
 
             </div>
         </div>
+        <div id="pdfModal" class="pdf-modal">
+    <div class="pdf-content">
+
+        <div class="pdf-controls">
+            <button onclick="downloadPDF()" class="pdf-btn">⬇ Download</button>
+            <button onclick="closePDF()" class="pdf-btn close">✕ Close</button>
+        </div>
+
+        <iframe id="pdfFrame"></iframe>
+    </div>
+</div>
 
     </section>
 
@@ -476,11 +487,17 @@ if (toggle) {
 
 /* ================= PDF MODAL ================= */
 
+let currentPDF = "";
+
 function openPDF(pdfPath) {
     const modal = document.getElementById("pdfModal");
     const frame = document.getElementById("pdfFrame");
 
-    frame.src = pdfPath;
+    currentPDF = pdfPath;
+
+    // Cleaner PDF view
+    frame.src = pdfPath + "#toolbar=0&navpanes=0&scrollbar=0";
+
     modal.style.display = "flex";
     document.body.style.overflow = "hidden";
 }
@@ -490,6 +507,16 @@ function closePDF() {
     document.getElementById("pdfFrame").src = "";
     document.body.style.overflow = "auto";
 }
+
+function downloadPDF() {
+    const link = document.createElement("a");
+    link.href = currentPDF;
+    link.download = currentPDF.split('/').pop();
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
 
 /* ================= DROPDOWN MENU (CLICK ONLY) ================= */
 

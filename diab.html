@@ -67,6 +67,18 @@ if ('scrollRestoration' in history) {
 document.addEventListener('DOMContentLoaded', function () {
     window.scrollTo(0, 0);
 });
+
+function openImageModal(img) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+}
+
+function closeImageModal() {
+    document.getElementById("imageModal").style.display = "none";
+}
+
 </script>
 
 <!-- ================= PROJECT HERO ================= -->
@@ -129,15 +141,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
         <div class="project-card">
             <h3>Medical Data Input Page</h3>
-            <img src="diab-files/diab-indimg.jpg" alt="Diabetes Input Page">
+            <img src="diab-files/diab-indimg.jpg" alt="Diabetes Input Page" onclick="openImageModal(this)" style="cursor: zoom-in;">
         </div>
 
         <div class="project-card">
             <h3>Prediction Result Page</h3>
-            <img src="diab-files/diab-resimg.jpg" alt="Diabetes Result Page">
+            <img src="diab-files/diab-resimg.jpg" alt="Diabetes Result Page" onclick="openImageModal(this)" style="cursor: zoom-in;">
         </div>
 
     </div>
+<!-- Fullscreen Image Modal -->
+<div id="imageModal" class="image-modal" onclick="closeImageModal()">
+    <img id="modalImage">
+</div>
 
     <!-- VIDEO DEMO -->
     <div class="project-card">
