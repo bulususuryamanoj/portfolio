@@ -359,3 +359,15 @@ footer {
     .hero-content { flex-direction: column-reverse; text-align: center; }
     .hero-image { width: 200px; height: 200px; }
 }
+<div class="hackathon-layout">
+
+    <!-- LEFT SIDE → IMAGES -->
+    <div class="hackathon-gallery" id="image-container"></div>
+
+    <!-- RIGHT SIDE → CERTIFICATE -->
+    <div class="hackathon-certificate">
+        <h4>Certificate</h4>
+        <img id="certificate" alt="Certificate">
+    </div>
+
+</div>
